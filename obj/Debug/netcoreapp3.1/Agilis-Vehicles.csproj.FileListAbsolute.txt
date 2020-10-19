@@ -1,0 +1,13 @@
+C:\Users\user\source\repos\Agilis-Vehicles\bin\Debug\netcoreapp3.1\Agilis-Vehicles.exe
+C:\Users\user\source\repos\Agilis-Vehicles\bin\Debug\netcoreapp3.1\Agilis-Vehicles.deps.json
+C:\Users\user\source\repos\Agilis-Vehicles\bin\Debug\netcoreapp3.1\Agilis-Vehicles.runtimeconfig.json
+C:\Users\user\source\repos\Agilis-Vehicles\bin\Debug\netcoreapp3.1\Agilis-Vehicles.runtimeconfig.dev.json
+C:\Users\user\source\repos\Agilis-Vehicles\bin\Debug\netcoreapp3.1\Agilis-Vehicles.dll
+C:\Users\user\source\repos\Agilis-Vehicles\bin\Debug\netcoreapp3.1\Agilis-Vehicles.pdb
+C:\Users\user\source\repos\Agilis-Vehicles\obj\Debug\netcoreapp3.1\Agilis-Vehicles.csprojAssemblyReference.cache
+C:\Users\user\source\repos\Agilis-Vehicles\obj\Debug\netcoreapp3.1\Agilis-Vehicles.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Agilis-Vehicles\obj\Debug\netcoreapp3.1\Agilis-Vehicles.AssemblyInfo.cs
+C:\Users\user\source\repos\Agilis-Vehicles\obj\Debug\netcoreapp3.1\Agilis-Vehicles.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Agilis-Vehicles\obj\Debug\netcoreapp3.1\Agilis-Vehicles.dll
+C:\Users\user\source\repos\Agilis-Vehicles\obj\Debug\netcoreapp3.1\Agilis-Vehicles.pdb
+C:\Users\user\source\repos\Agilis-Vehicles\obj\Debug\netcoreapp3.1\Agilis-Vehicles.genruntimeconfig.cache
