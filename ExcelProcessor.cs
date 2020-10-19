@@ -41,7 +41,22 @@ class ExcelProcessor
     {
         IWorkbook workbook;
         var names = new List<MotorModel>();
-        
+        using (var file = new FileStream(excelFile, FileMode.Open, FileAccess.Read))
+        {
+            workbook = WorkbookFactory.Create(file);
+        }
+
+        var sheet = workbook.GetSheetAt(0);
+        var row = 1;
+        while (sheet.GetRow(row) != null)
+        {
+            var makeCell = sheet.GetRow(row).GetCell(19);
+            names.Add(new MotorModel{
+                Make = makeCell.StringCellValue,
+                ExcelLocation = makeCell.Address.ToString()
+            });
+            row++;
+        }
         return names;
     }
 
