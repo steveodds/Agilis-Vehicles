@@ -7,10 +7,11 @@ using NPOI.SS.UserModel;
 
 class ExcelProcessor
 {
-    private string excelFile;
+    private string _excelFile;
+    public List<MotorModel> RawMotorData {get; set;}
     public ExcelProcessor(string filepath)
     {
-        excelFile = filepath;
+        _excelFile = filepath;
     }
 
     public List<MakeModel> GetRefData()
@@ -37,11 +38,11 @@ class ExcelProcessor
         return vehicles;
     }
 
-    public List<MotorModel> GetGenesysData()
+    public void GetGenesysData()
     {
         IWorkbook workbook;
         var names = new List<MotorModel>();
-        using (var file = new FileStream(excelFile, FileMode.Open, FileAccess.Read))
+        using (var file = new FileStream(_excelFile, FileMode.Open, FileAccess.Read))
         {
             workbook = WorkbookFactory.Create(file);
         }
@@ -57,7 +58,11 @@ class ExcelProcessor
             });
             row++;
         }
-        return names;
+        RawMotorData = names;
     }
 
+    public void WriteFixedData(List<MotorModel> fixedModels)
+    {
+        //TODO
+    }
 }
