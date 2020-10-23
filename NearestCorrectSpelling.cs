@@ -5,18 +5,20 @@ using Fastenshtein;
 class NearestCorrectSpelling
 {
     private string _excelFile;
+    // public List<MotorModel> FinalList { get; private set; }
     private List<MotorModel> _misspeltModels;
     private List<MotorModel> _filteredModels;
     public NearestCorrectSpelling(List<MotorModel> misspeltModels, string excelFile)
     {
         _misspeltModels = misspeltModels;
         _excelFile = excelFile;
+        _filteredModels = new List<MotorModel>();
     }
 
     private string ProcessRawModels(string model)
     {
         if(model.Contains(@"/"))
-            model = model.Substring(model.IndexOf(@"/") + 1);
+            model = model.Replace('/', ' ');
 
         //TODO Add more constraints
         
@@ -27,11 +29,23 @@ class NearestCorrectSpelling
     {
         if(original is null)
             throw new ArgumentNullException("Cannot compare null values");
+        //string word = String.Empty;
+        exactmatch = false;
+        var match = GetWord(original, out int levDistance);
+        if(match is null || levDistance == 1000)
+            throw new Exception("No match was found");
+        if(match == original && levDistance == 0)
+            exactmatch = true;
+        return match;
+    }
+
+    public string GetWord(string original, out int lev)
+    {
         string word = String.Empty;
-        var models = GetList();
         var levenshtein = new Levenshtein(original);
         var levDistance = 1000;
-        exactmatch = false;
+        var models = GetList();
+        System.Console.WriteLine($"Comparing against {models.Count} strings.");
         foreach (var model in models)
         {
             int distanceTemp = levenshtein.DistanceFrom(model.Model);
@@ -39,16 +53,14 @@ class NearestCorrectSpelling
             {
                 levDistance = distanceTemp;
                 word = model.Model;
+                //System.Console.WriteLine($"{model.Model} is {levDistance} edits away from {original}.");
             }
             if(levDistance == 0)
-            {
-                exactmatch = true;
                 break;
-            }
         }
+        lev = levDistance;
         return word;
     }
-
 
     private List<MakeModel> GetList()
     {
@@ -67,7 +79,7 @@ class NearestCorrectSpelling
             if (exactmatch is false || !String.IsNullOrEmpty(modelMatch))
             {
                 _filteredModels.Add(new MotorModel{
-                    Make = modelMatch,
+                    Make = $"[{model.Make}] ==> [{modelMatch}]",
                     ExcelLocation = model.ExcelLocation
                 });
             }
@@ -75,4 +87,5 @@ class NearestCorrectSpelling
 
         return _filteredModels;
     }
+
 }
