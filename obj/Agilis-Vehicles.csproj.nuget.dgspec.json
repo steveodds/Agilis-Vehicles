@@ -42,13 +42,17 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Fastenshtein": {
+              "target": "Package",
+              "version": "[*, )"
+            },
             "NPOI": {
               "target": "Package",
               "version": "[2.5.1, )"
             },
             "Npoi.Mapper": {
               "target": "Package",
-              "version": "[*, )"
+              "version": "[3.5.1, )"
             }
           },
           "imports": [

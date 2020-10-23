@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "iA5w+plu97qXZLUb2W8w9QGRu4TNTf09W+p5oGZRwdlj/NoFDNxz+dt93gfi3qJB2j0bMz2hjgeXm4ub+EzthQ==",
+  "dgSpecHash": "zA56oDG+yMzbX8VmGacU7pKoLPwlgHBGmY6fge94pzsuMUcOWElaL1Ciw7+RPsbb8Lk9WhrkqwM/tqyQuANfFg==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\Agilis-Vehicles\\Agilis-Vehicles.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\fastenshtein\\1.0.0.5\\fastenshtein.1.0.0.5.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",

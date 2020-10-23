@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Fastenshtein/1.0.0.5": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/Fastenshtein.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Fastenshtein.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/2.0.0": {
         "type": "package",
         "compile": {
@@ -306,6 +318,22 @@
     }
   },
   "libraries": {
+    "Fastenshtein/1.0.0.5": {
+      "sha512": "zsNcxoqe7PaouGKu8aFYJpWO7u96RtBqmkgOGVY3OsQoM/Lr2AMe8BfksdrqcJRDiKvhPRUffg17GC+K1XtkYw==",
+      "type": "package",
+      "path": "fastenshtein/1.0.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fastenshtein.1.0.0.5.nupkg.sha512",
+        "fastenshtein.nuspec",
+        "lib/net40-client/Fastenshtein.dll",
+        "lib/net40-client/Fastenshtein.xml",
+        "lib/netstandard1.0/Fastenshtein.dll",
+        "lib/portable-net40+sl5+win8+wpa+wp8/Fastenshtein.dll",
+        "lib/portable-net40+sl5+win8+wpa+wp8/Fastenshtein.xml"
+      ]
+    },
     "Microsoft.NETCore.Platforms/2.0.0": {
       "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
       "type": "package",
@@ -1255,8 +1283,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Fastenshtein >= *",
       "NPOI >= 2.5.1",
-      "Npoi.Mapper >= *"
+      "Npoi.Mapper >= 3.5.1"
     ]
   },
   "packageFolders": {
@@ -1301,13 +1330,17 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Fastenshtein": {
+            "target": "Package",
+            "version": "[*, )"
+          },
           "NPOI": {
             "target": "Package",
             "version": "[2.5.1, )"
           },
           "Npoi.Mapper": {
             "target": "Package",
-            "version": "[*, )"
+            "version": "[3.5.1, )"
           }
         },
         "imports": [
