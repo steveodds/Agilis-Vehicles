@@ -17,7 +17,7 @@ class ExcelProcessor
     public List<MakeModel> GetRefData()
     {
         //var refFile = $@"{Directory.GetCurrentDirectory()}\Agilis LIVE Make & Models.xlsx";
-        var refFile = @"C:\Users\user\Documents\sample\Agilis LIVE Make & Models.xlsx";
+        var refFile = $@"{Directory.GetCurrentDirectory()}\Agilis LIVE Make & Models.xlsx";
         var vehicles = new List<MakeModel>();
         IWorkbook workbook;
         using (FileStream file = new FileStream(refFile, FileMode.Open, FileAccess.Read))
@@ -58,7 +58,7 @@ class ExcelProcessor
             });
             row++;
         }
-        RawMotorData = names;
+        RawMotorData = names.OrderBy(x => x.Make).ToList();
     }
 
     public void WriteFixedData(List<MotorModel> fixedModels)

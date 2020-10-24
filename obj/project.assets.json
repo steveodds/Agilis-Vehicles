@@ -1283,7 +1283,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Fastenshtein >= *",
+      "Fastenshtein >= 1.0.0.5",
       "NPOI >= 2.5.1",
       "Npoi.Mapper >= 3.5.1"
     ]
@@ -1332,7 +1332,7 @@
         "dependencies": {
           "Fastenshtein": {
             "target": "Package",
-            "version": "[*, )"
+            "version": "[1.0.0.5, )"
           },
           "NPOI": {
             "target": "Package",

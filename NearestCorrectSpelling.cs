@@ -42,18 +42,16 @@ class NearestCorrectSpelling
     public string GetWord(string original, out int lev)
     {
         string word = String.Empty;
-        var levenshtein = new Levenshtein(original);
+        var levenshtein = new Levenshtein(original.ToLowerInvariant().Trim());
         var levDistance = 1000;
         var models = GetList();
-        System.Console.WriteLine($"Comparing against {models.Count} strings.");
         foreach (var model in models)
         {
-            int distanceTemp = levenshtein.DistanceFrom(model.Model);
+            int distanceTemp = levenshtein.DistanceFrom(model.Model.ToLowerInvariant().Trim());
             if(distanceTemp < levDistance)
             {
                 levDistance = distanceTemp;
                 word = model.Model;
-                //System.Console.WriteLine($"{model.Model} is {levDistance} edits away from {original}.");
             }
             if(levDistance == 0)
                 break;
@@ -73,13 +71,12 @@ class NearestCorrectSpelling
     {
         foreach (var model in _misspeltModels)
         {
-            // bool exactmatch = false;
             var fixedModel = ProcessRawModels(model.Make);
             var modelMatch = GetClosestWord(fixedModel, out bool exactmatch);
             if (exactmatch is false || !String.IsNullOrEmpty(modelMatch))
             {
                 _filteredModels.Add(new MotorModel{
-                    Make = $"[{model.Make}] ==> [{modelMatch}]",
+                    Make = modelMatch,
                     ExcelLocation = model.ExcelLocation
                 });
             }

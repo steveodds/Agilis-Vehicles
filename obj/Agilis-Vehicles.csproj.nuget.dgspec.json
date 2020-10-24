@@ -44,7 +44,7 @@
           "dependencies": {
             "Fastenshtein": {
               "target": "Package",
-              "version": "[*, )"
+              "version": "[1.0.0.5, )"
             },
             "NPOI": {
               "target": "Package",
